@@ -11,6 +11,11 @@
 		22A5E3C928916EB8003E1849 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E3C828916EB8003E1849 /* ContentView.swift */; };
 		22A5E3CB28916EBB003E1849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A5E3CA28916EBB003E1849 /* Assets.xcassets */; };
 		22A5E3CE28916EBB003E1849 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A5E3CD28916EBB003E1849 /* Preview Assets.xcassets */; };
+		22A5E3D628916F5A003E1849 /* PhotosDataMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E3D528916F5A003E1849 /* PhotosDataMananger.swift */; };
+		22A5E3D8289172D2003E1849 /* AsyncAwaitImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E3D7289172D2003E1849 /* AsyncAwaitImageView.swift */; };
+		22A5E3DA28917B49003E1849 /* AsyncLetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E3D928917B49003E1849 /* AsyncLetView.swift */; };
+		22A5E3DC28918193003E1849 /* TaskGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E3DB28918193003E1849 /* TaskGroupView.swift */; };
+		22A5E3DE289186D5003E1849 /* ContinuationBAY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E3DD289186D5003E1849 /* ContinuationBAY.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		22A5E3C828916EB8003E1849 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22A5E3CA28916EBB003E1849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22A5E3CD28916EBB003E1849 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22A5E3D528916F5A003E1849 /* PhotosDataMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDataMananger.swift; sourceTree = "<group>"; };
+		22A5E3D7289172D2003E1849 /* AsyncAwaitImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitImageView.swift; sourceTree = "<group>"; };
+		22A5E3D928917B49003E1849 /* AsyncLetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLetView.swift; sourceTree = "<group>"; };
+		22A5E3DB28918193003E1849 /* TaskGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupView.swift; sourceTree = "<group>"; };
+		22A5E3DD289186D5003E1849 /* ContinuationBAY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuationBAY.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,10 @@
 			children = (
 				22A5E3C628916EB8003E1849 /* SwiftConcurrency101App.swift */,
 				22A5E3C828916EB8003E1849 /* ContentView.swift */,
+				22A5E3D7289172D2003E1849 /* AsyncAwaitImageView.swift */,
+				22A5E3D928917B49003E1849 /* AsyncLetView.swift */,
+				22A5E3DB28918193003E1849 /* TaskGroupView.swift */,
+				22A5E3D428916F3C003E1849 /* Services */,
 				22A5E3CA28916EBB003E1849 /* Assets.xcassets */,
 				22A5E3CC28916EBB003E1849 /* Preview Content */,
 			);
@@ -65,6 +79,15 @@
 				22A5E3CD28916EBB003E1849 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22A5E3D428916F3C003E1849 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				22A5E3D528916F5A003E1849 /* PhotosDataMananger.swift */,
+				22A5E3DD289186D5003E1849 /* ContinuationBAY.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +161,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				22A5E3C928916EB8003E1849 /* ContentView.swift in Sources */,
+				22A5E3DC28918193003E1849 /* TaskGroupView.swift in Sources */,
+				22A5E3DE289186D5003E1849 /* ContinuationBAY.swift in Sources */,
 				22A5E3C728916EB8003E1849 /* SwiftConcurrency101App.swift in Sources */,
+				22A5E3D8289172D2003E1849 /* AsyncAwaitImageView.swift in Sources */,
+				22A5E3DA28917B49003E1849 /* AsyncLetView.swift in Sources */,
+				22A5E3D628916F5A003E1849 /* PhotosDataMananger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

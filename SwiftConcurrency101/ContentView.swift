@@ -7,10 +7,37 @@
 
 import SwiftUI
 
+class ContentViewModel: ObservableObject {
+    @Published var image: UIImage? = nil
+    private var manager = PhotosDataMananger()
+    
+    func fetchImage() {
+        manager.getRandomImage { result in
+            switch result {
+            case let .success(image):
+                self.image = image
+            case let .failure(error):
+                print("XD \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
 struct ContentView: View {
+    @StateObject private var viewModel = ContentViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            if let image = viewModel.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 200)
+            }
+        }
+        .onAppear {
+            viewModel.fetchImage()
+        }
     }
 }
 
