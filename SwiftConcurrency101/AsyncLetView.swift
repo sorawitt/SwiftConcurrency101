@@ -7,24 +7,9 @@
 
 import SwiftUI
 
-class AsyncLetViewModel: ObservableObject {
-    @Published var images: [UIImage] = []
-    private let manager = PhotosDataMananger()
-    
-    func getImages() async throws {
-        let image1 = try await manager.getRandomImageWithAsync()
-        let image2 = try await manager.getRandomImageWithAsync()
-        let image3 = try await manager.getRandomImageWithAsync()
-        let image4 = try await manager.getRandomImageWithAsync()
-        let image5 = try await manager.getRandomImageWithAsync()
-        images.append(contentsOf: [image1, image2, image3, image4, image5])
-    }
-}
-
 struct AsyncLetView: View {
-    @StateObject private var viewModel = AsyncLetViewModel()
     private let column = [GridItem(.flexible()), GridItem(.flexible())]
-    @State var images: [UIImage] = []
+    @State private var images: [UIImage] = []
     
     var body: some View {
         LazyVGrid(columns: column, spacing: 0) {
@@ -37,26 +22,27 @@ struct AsyncLetView: View {
         }
         .task {
             do {
-                async let fetchImage1 = getImage()
-                async let fetchImage2 = getImage()
-                async let fetchImage3 = getImage()
-                async let fetchImage4 = getImage()
+                let image1 = try await getImage()
+                images.append(image1)
 
-                let (image1, image2, image3, image4) = await (try fetchImage1, try fetchImage2, try fetchImage3, try fetchImage4)
+                let image2 = try await getImage()
+                images.append(image2)
 
-                images.append(contentsOf: [image1, image2, image3, image4])
+                let image3 = try await getImage()
+                images.append(image3)
+
+                let image4 = try await getImage()
+                images.append(image4)
                 
-//                let image1 = try await getImage()
-//                images.append(image1)
+                
+//                async let fetchImage1 = getImage()
+//                async let fetchImage2 = getImage()
+//                async let fetchImage3 = getImage()
+//                async let fetchImage4 = getImage()
 //
-//                let image2 = try await getImage()
-//                images.append(image2)
+//                let (image1, image2, image3, image4) = await (try fetchImage1, try fetchImage2, try fetchImage3, try fetchImage4)
 //
-//                let image3 = try await getImage()
-//                images.append(image3)
-//
-//                let image4 = try await getImage()
-//                images.append(image4)
+//                images.append(contentsOf: [image1, image2, image3, image4])
                 
             } catch {
                 print("error")

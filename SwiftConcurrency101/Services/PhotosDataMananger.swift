@@ -42,6 +42,7 @@ class PhotosDataMananger {
                 return
             } else {
                 completion(.failure(.otherError))
+                return
             }
         }
         .resume()
@@ -57,7 +58,6 @@ class PhotosDataMananger {
             throw PhotosDataManangerError.httpError
         }
         
-//        try await Task.sleep(nanoseconds: 2_000_000_000)
         if let image = UIImage(data: data) {
             return image
         }
